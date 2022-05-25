@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Montserrat Alternates', sans-serif;
+	}
+
+/*
+ No se como
+	.capa{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: rgba(0,0,0,0.6);
+		z-index: -1;
+		top: 0;left: 0;
+	}
+*/
+
+	/*Fondo*/
+	body{
+		background: url(../Fallout.webp);
+		background-position: center center;			/*horizontalmente */
+		background-repeat: no-repeat;		/* Para que la imagen de fondo no se repita */
+		background-attachment: fixed; /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+		background-size: cover;		/* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+		background-color: #FFF;	/* Se muestra un color de fondo mientras se está cargando la imagen	de fondo o si hay problemas para cargarla */
+	}
+	/*Fondo*/
+
+	/*Estilos para el encabezado*/
+
+	.container{
+		width: 90%;
+		max-width: 1200px;
+		margin: auto;
+	}
+	.container .btn-menu, .logo{
+		float: left;
+		line-height:100px;
+	}
+	.container .btn-menu label{
+		color: #fff;
+		font-size: 25px;
+		cursor: pointer;
+	}
+	.logo h1{
+		color: #fff;
+		font-weight: 400;
+		font-size: 22px;
+		margin-left: 10px;
+	}
+	.container .menu{
+		float: right;
+		line-height: 100px;
+	}
+	.container .menu a{
+		display: inline-block;
+		padding: 15px;
+		line-height: normal;
+		text-decoration: none;
+		color: #fff;
+		transition: all 0.3s ease;
+		border-bottom: 2px solid transparent;
+		font-size: 15px;
+		margin-right: 5px;
+	}
+	.container .menu a:hover{
+		border-bottom: 2px solid #c7c7c7;
+		padding-bottom: 5px;
+	}
+	/*Fin de Estilos para el encabezado*/
+
+	/*Menù lateral*/
+	#btn-menu{
+		display: none;
+	}
+	.container-menu{
+		position: absolute;
+		background: rgba(0,0,0,0.5);
+		width: 100%;
+		height: 100vh;
+		top: 0;left: 0;
+		transition: all 500ms ease;
+		opacity: 0;
+		visibility: hidden;
+	}
+	#btn-menu:checked ~ .container-menu{
+		opacity: 1;
+		visibility: visible;
+	}
+	.cont-menu{
+		width: 100%;
+		max-width: 250px;
+		background: #1c1c1c;
+		height: 100vh;
+		position: relative;
+		transition: all 500ms ease;
+		transform: translateX(-100%);
+	}
+	#btn-menu:checked ~ .container-menu .cont-menu{
+		transform: translateX(0%);
+	}
+	.cont-menu nav{
+		transform: translateY(15%);
+	}
+	.cont-menu nav a{
+		display: block;
+		text-decoration: none;
+		padding: 20px;
+		color: #c7c7c7;
+		border-left: 5px solid transparent;
+		transition: all 400ms ease;
+	}
+	.cont-menu nav a:hover{
+		border-left: 5px solid #c7c7c7;
+		background: #1f1f1f;
+	}
+	.cont-menu label{
+		position: absolute;
+		right: 5px;
+		top: 10px;
+		color: #fff;
+		cursor: pointer;
+		font-size: 18px;
+	}
+	/*Fin de Menù lateral*/
+
+
+/*parte 2*/
+
+
+
+
+
+
+	/*****************************************************************/
+
+
+
+/*Registro*/
+	.form_register{
+		width: 450px;
+		margin: auto;
+	}
+	.form_register h1{
+		color: #3c93b0;
+	}
+	hr{
+		border: 0;
+		background: #CCC;
+		height: 1px;
+		margin: 10px 0;
+		display: block;
+	}
+	form{
+		background: #FFF;
+		margin: auto;
+		padding: 20px 50px;
+		border: 1px solid #d1d1d1;
+	}
+
+	input,select{
+		display: block;
+		width: 100%;
+		font-size: 11pt;
+		padding: 5px;
+		border: 1px solid #85929e;
+		border-radius: 5px;
+	}
+	.notItemOne option:first-child{
+		display: none;
+	}
+	.btn_save{
+		font-size: 12pt;
+		background: #12a4c6;
+		padding: 10px;
+		color: #FFF;
+		letter-spacing: 1px;
+		border: 0;
+		cursor: pointer;
+		margin: 15px auto;
+	}
+	.alert{
+		width: 100%;
+		background: #66e07d66;
+		border-radius: 6px;
+		margin: 20px auto;
+	}
+	.msg_error{
+		color: #e65656;
+	}
+	.msg_save{
+		color: #126e00;
+	}
+	.alert p{
+		padding: 10px;
+	}
+
+	/*Fin Registro*/
+
+	/*Lista de usuarios*/
+	#container h1{
+
+		height: 100%x;
+		font-size: 35px;
+		display: inline-block;
+	}
+
+	table{
+		border-collapse: collapse;
+		font-size: 12pt;
+		font-family: 'arial';
+		width: 100%;
+	}
+	table th{
+		text-align: left;
+		padding: 10px;
+		background: #3d7ba8;
+		color: #FFF;
+	}
+	table tr:nth-child(odd){
+		background: #FFF;
+	}
+	table td{
+		padding: 10px;
+	}
+	.link_edit{
+		color: #0ca4ce;
+	}
+	.link_delete{
+		color: #f26b6b;
+	}
+	.data_delete{
+		text-align: center;
+	}
+	.data_delete h2{
+		font-size: 12pt;
+	}
+	.data_delete span{
+		font-weight: bold;
+		color: #4f72d4;
+		font-size: 12pt;
+	}
+	.btn_cancel,.btn_ok{
+		width: 124px;
+		background: #478ba2;
+		color: #FFF;
+		display: inline-block;
+		padding: 5px;
+		border-radius: 5px;
+		cursor: pointer;
+		margin: 15px;
+	}
+	.btn_cancel{
+		background: #42b343;
+	}
+
+	.data_delete form{
+
+		background: initial;
+		margin: auto;
+		padding: 20px 50px;
+		border: 0;
+
+	}
+		/*Fin lista de usuarios*/
+
+
+	/*Ordenador*/
+	.paginador ul{
+		padding: 15px;
+		list-style: none;
+		background: #FFF;
+		margin-top: 15px;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: flex-end;
+	}
+	.paginador a, .pageSelected{
+		color: #428bca;
+		border: 1px solid #ddd;
+		padding: 5px;
+		display: inline-block;
+		font-size: 14px;
+		text-align: center;
+		width: 35px;
+	}
+	.paginador a:hover{
+		background: #ddd;
+	}
+	.pageSelected{
+		color: #FFF;
+		background: #428bca;
+		border: 1px solid #428bca;
+	}
+	/*Fin ordenador*/
+
+	/*Buscador*/
+	.form_search{
+		  text-align: center;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		float: right;
+		background: initial;
+		padding: 10px;
+		border-radius: 10px;
+	}
+	.form_search .btn_search{
+		  text-align: center;
+		background: #1faac8;
+		color: #FFF;
+		padding: 0 20px;
+		border: 0;
+		cursor: pointer;
+		margin-left: 10px;
+	}
+	/*Fin buscador*/
