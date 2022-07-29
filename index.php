@@ -1,72 +1,31 @@
 <?php 
-	
-$alert = '';
-session_start();
-if(!empty($_SESSION['active']))
-{
-	header('location: sistema/');
-}else{
+define('BASEPATH', true);
 
-	if(!empty($_POST))
-	{
-		if(empty($_POST['usuario']) || empty($_POST['clave']))
-		{
-			$alert = 'Ingrese su usuario y su calve';
-		}else{
+require 'system/config.php';
+require 'system/core/router.php';
+require 'system/core/controller.php';
+require 'system/core/model.php';
+require 'system/core/view.php';
+require 'system/corehelper.php';
 
-			require_once "conexion.php";
+$router = new router();
 
-			$user = mysqli_real_escape_string($conection,$_POST['usuario']);
-			$pass = md5(mysqli_real_escape_string($conection,$_POST['clave']));
+$controlador = $router->getController();
+$metodo = $router->getMethod();
+$parametro = $router->getParam();
 
-			$query = mysqli_query($conection,"SELECT * FROM usuario WHERE usuario= '$user' AND clave = '$pass'");
-			mysqli_close($conection);
-			$result = mysqli_num_rows($query);
-
-			if($result > 0)
-			{
-				$data = mysqli_fetch_array($query);
-				$_SESSION['active'] = true;
-				$_SESSION['idUser'] = $data['idusuario'];
-				$_SESSION['nombre'] = $data['nombre'];
-				$_SESSION['email']  = $data['email'];
-				$_SESSION['user']   = $data['usuario'];
-				$_SESSION['rol']    = $data['rol'];
-
-				header('location: sistema/');
-			}else{
-				$alert = 'El usuario o la clave son incorrectos';
-				session_destroy();
-			}
-
-
-		}
-
-	}
+if (!corehelper::validarControlador($controlador)) {
+	$controlador = 'errorpage';
 }
- ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Login | Sistema Facturación</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<section id="container">
-		
-		<form action="" method="post">
-			
-			<h3>Instituto Madero</h3>
-			<img src="img/login1.png" alt="Login">
 
-			<input type="text" name="usuario" placeholder="Usuario">
-			<input type="password" name="clave" placeholder="Contraseña">
-			<div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>
-			<input type="submit" value="INICIAR">
+require PATH_CONTROLLERS . "{$controlador}/{$controlador}controller.php";
 
-		</form>
+$controlador .= 'controller';
 
-	</section>
-</body>
-</html>
+if (!corehelper::validarMetodo($controlador, $metodo)) {
+	$metodo = 'exec';
+}
+
+$controller = new $controlador();
+$controller->$metodo($parametro);
+?>
