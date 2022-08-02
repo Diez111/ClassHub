@@ -9,11 +9,11 @@
 		<div class="container-menu">
 	 	<div class="cont-menu">
 	 	<nav>
-			<a href="/mvc/pepe">Noticias</a>
+			<a href="/mvc/inicio">Noticias</a>
 			<a href="/mvc/lista_usuarios">Lista de usuarios</a>
 			<a href="mvc/pepe" class="btn_new">Nuevo usuario</a>
 			<a href="mvc/pepe">Tareas para alumnos</a>
-			<a href="mvc/pepe">Examen</a>
+			<a href="/mvc/examen_menu_admin">Examen</a>
 		</nav>
 			<label for="btn-menu">✖️</label>
 		</div>
