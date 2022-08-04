@@ -169,6 +169,7 @@
 		border: 1px solid #85929e;
 		border-radius: 5px;
 	}
+	
 	.notItemOne option:first-child{
 		display: none;
 	}

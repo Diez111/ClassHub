@@ -43,9 +43,10 @@ class loginmodel extends model
 	public function bloquear($parametros)
 	{
 		$usuario = $this->db->real_escape_string($parametros['usuario']);
-		$sql = "SELECT `intentos` FROM `usuario` WHERE `usuario` = '{$usuario}'";
-		
-		$intentos = $this->db->query($sql)->fetch_assoc();
+		$sql = "SELECT `intentos` FROM `usuario` WHERE `usuario` = '$usuario'";
+		$query = $this->db->query($sql);
+		var_dump($query);
+		$intentos = $query->fetch_assoc();
 
 		if ($intentos['intentos'] > 0) {
 			$sql = "UPDATE `usuario` SET `intentos` = {$intentos['intentos']} - 1 WHERE `usuario` = '{$usuario}'";

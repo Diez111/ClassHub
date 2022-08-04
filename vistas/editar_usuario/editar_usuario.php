@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php require "vistas/includes/scripts.php"; ?>
+	<script type="text/javascript" src="/mvc/vistas/includes/datos_usuario.js"></script>
 	<title>Editar Usuario</title>
 </head>
 <body>
@@ -20,7 +21,7 @@
 			<form action="<?= FOLDER_PATH . '/editar_usuario/update/' . $id?>" method="post">
 				<input type="hidden" name="id" value="<?= $id ?>">
 				<label for="nombre">Nombre</label>
-				<input type="text" name="nombre" id="nombre" placeholder="Nombre completo" value="<?= $nombre; ?>">
+				<input type="text" name="nombre" id="nombre" placeholder="Nombre completo" value="<?= $nombre_u; ?>">
 				<label for="correo">Correo electrónico</label>
 				<input type="email" name="correo" id="correo" placeholder="Correo electrónico" value="<?= $correo; ?>">
 				<label for="usuario">Usuario</label>
@@ -30,11 +31,11 @@
 				<label for="rol">Tipo Usuario</label>
 				<select name="rol" id="rol" class="notItemOne">
 					<?php 
-					if ($rol == 1) {
+					if ($rol_u == 1) {
 						echo "<option value=\"1\" selected>Admin</option>\n";
-					} else if ($rol == 2) {
+					} else if ($rol_u == 2) {
 						echo "<option value=\"2\" selected>Profesor</option>\n";
-					} else if ($rol == 3) {
+					} else if ($rol_u == 3) {
 						echo "<option value=\"3\" selected>Alumno</option>\n";
 					}
 					?>
@@ -43,7 +44,7 @@
 					<option value="3">Alumno</option>
 				</select>
 				<label for="curso">Curso:</label>
-				<select name="curso" id="rol" class="notItemOne">
+				<select name="curso" id="curso" class="notItemOne">
 					<?php
 					switch ($curso) {
 						case 1: echo "<option value=\"1\" selected>Primero</option>"; break;
@@ -71,6 +72,18 @@
 					<option value="9">Sexto EM</option>
 					<option value="10">Septimo EL</option>
 					<option value="11">Septimo EM</option>
+				</select>
+				<label for="estado">Estado:</label>
+				<select name="estado" id="estado" class="notItemOne">
+					<?php 
+					if ($estatus == 1) {
+						echo "<option value=\"1\" selected>No bloqueado</option>";
+					} else {
+						echo "<option value=\"2\" selected>Bloqueado</option>";
+					}
+					?>
+					<option value="2">Bloqueado</option>
+					<option value="1">No bloqueado</option>
 				</select>
 				<input type="submit" value="Actualizar usuario" class="btn_save">
 			</form>

@@ -9,12 +9,11 @@
 <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.7.2.custom.css" />
 	<title>ClassHub</title>
 </head>
-<body class="is-preload">
-	<?php include "vistas/includes/header.php"; ?>
+<?php include "vistas/includes/header.php"; ?>
 	<?php include "vistas/includes/nav.php"; ?>
+<br><br><br><br><br>
+<body class="is-preload">
 <section id="container">
-
-<p class="head1">Bienvenido al área administrativa </p>
 <div style="margin:auto;width:90%;height:500px;box-shadow:2px 1px 2px 2px #CCCCCC;text-align:left">
 <div style="margin-left:20%;padding-top:5%">
 
