@@ -28,7 +28,7 @@ class lista_usuarioscontroller extends controller
 		$this->render(__CLASS__, $params);
 
 		$query = $this->model->consulta();
-		
+
 		if ($query->num_rows) {
 			while ($datos = $query->fetch_assoc()) {
 		?>
@@ -40,9 +40,9 @@ class lista_usuarioscontroller extends controller
                 <td><?php echo $datos['rol'] ?></td>
                 <td><?php echo $datos['curso'] ?></td>
                 <td>
-                <a class="link_edit" href="editar_usuario/exec/<?= "{$datos['idusuario']}"; ?>">Editar</a>
+                <a class="link_edit" href="/mvc/editar_usuario/exec/<?= "{$datos['idusuario']}" ?>">Editar</a>
 
-                <a class="link_delete" href="eliminar_usuario/<?= "{$datos['idusuario']}"; ?>">Eliminar</a>
+                <a class="link_delete" href="/mvc/eliminar_usuario/exec/<?= "{$datos['idusuario']}" ?>">Eliminar</a>
                 </td>
             </tr>
 
@@ -57,11 +57,13 @@ class lista_usuarioscontroller extends controller
 </body>
 </html>
 	<?php
+		$this->model->close();
 	}
 
 	public function salir()
 	{
 		$this->session->close();
+		$this->model->close();
 		header('location: /mvc/login');
 	}
 }

@@ -1,16 +1,16 @@
 <?php 
 defined('BASEPATH') or exit('No se permite acceso directo');
-require_once ROOT . '/mvc/modelos/editar_usuario/editar_usuariomodel.php';
+require_once ROOT . '/mvc/modelos/eliminar_usuario/eliminar_usuariomodel.php';
 require_once ROOT . '/mvc/system/session.php';
 
-class editar_usuariocontroller extends controller
+class eliminar_usuariocontroller extends controller
 {
 	private $model;
 	private $session;
 
 	public function __construct()
 	{
-		$this->model = new editar_usuariomodel();
+		$this->model = new eliminar_usuariomodel();
 		$this->session = new session();
 		$this->session->iniciar();
 		if (empty($this->session->get('pass'))) {
@@ -27,21 +27,18 @@ class editar_usuariocontroller extends controller
 		$query = $this->model->consulta($id);
 		$datos = $query->fetch_assoc();
 
-		$params = array('nombre' => $this->session->get('nombre'), 
+		$params = array('nombre' => $this->session->get('nombre'),
 						'rol' => $this->session->get('rol'),
-						'nombre_u' => $datos['nombre'],
-						'correo' => $datos['correo'],
-						'usuario' => $datos['usuario'],
-						'rol_u' => $datos['rol'],
 						'id' => $datos['idusuario'],
-						'estatus' => $datos['estatus'],
-						'curso' => $datos['curso']);
+						'nombre_u' => $datos['nombre'],
+						'usuario' => $datos['usuario'],
+						'rol_u' => $datos['rol']);
 		$this->render(__CLASS__, $params);
 	}
 
-	public function update($parametros)
+	public function eliminar_usuario($parametros)
 	{
-		$this->model->Update($parametros);
+		$this->model->Eliminar_usuario($parametros);
 		$this->model->close();
 		header('location: /mvc/lista_usuarios');
 	}

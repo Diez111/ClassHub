@@ -1,8 +1,9 @@
 <?php 
 defined('BASEPATH') or exit('No se permite acceso directo');
+require_once ROOT . '/mvc/modelos/examen_menu_temas/examen_menu_temasmodel.php';
 require_once ROOT . '/mvc/system/session.php';
 
-class iniciocontroller extends controller
+class examen_menu_temascontroller extends controller
 {
 	private $session;
 	

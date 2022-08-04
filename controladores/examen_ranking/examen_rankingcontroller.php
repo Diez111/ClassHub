@@ -1,8 +1,9 @@
 <?php 
 defined('BASEPATH') or exit('No se permite acceso directo');
+require_once ROOT . '/mvc/modelos/examen_ranking/examen_rankingmodel.php';
 require_once ROOT . '/mvc/system/session.php';
 
-class iniciocontroller extends controller
+class examen_rankingcontroller extends controller
 {
 	private $session;
 	
