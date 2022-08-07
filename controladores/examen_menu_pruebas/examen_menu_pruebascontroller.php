@@ -34,6 +34,7 @@ class examen_menu_pruebascontroller extends controller
                 <td><?= $datos['test_id'] ?></td>
                 <td><?= $datos['test_name'] ?></td>
                 <td><?= $datos['total_que'] ?></td>
+                <td><a href="/mvc/examen_responder/exec/<?= $datos['test_id'] ?>">Hacer Prueba</a></td>
             </tr>
 
 		<?php 
@@ -52,6 +53,7 @@ class examen_menu_pruebascontroller extends controller
 	public function salir()
 	{
 		$this->session->close();
+		$this->model->close();
 		header('location: /mvc/login');
 	}
 }

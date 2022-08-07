@@ -17,7 +17,7 @@ require_once ROOT . '/mvc/system/session.php';
 		if (empty($this->session->get('pass'))) {
 			header('location: /mvc/login');
 		}			
-if ($this->session->get('rol') != 1) {
+if ($this->session->get('rol') == 3) {
 			header('location: /mvc/errorpage');
 }
 }	
@@ -77,7 +77,7 @@ if ($this->session->get('rol') != 1) {
 	public function agregar_pregunta($parametros){
 			$this->model->agregarPregunta($parametros);
 			$this->model->close();
-			header('location: /mvc/examen_menu_admin');
+			header('location: /mvc/examen_crear_pregunta');
 	}
 
 	public function salir()

@@ -43,7 +43,7 @@
 			<a href="#">Boletin de notas</a>
 			<a href="/mvc/tareas_enviar">Tareas para alumnos</a>
 			<a href="/mvc/tareas_recibidas_profesor">Tareas recibidas</a>
-			<a href="../calendario/index.php">Calendario</a>
+			<a href="pepe">Calendario</a>
 			<a href="/mvc/examen_menu_admin">Examen</a>
 			<a href="/mvc/chat">Chat</a>
 	 	</nav>
@@ -71,7 +71,7 @@
 			<a href="/mvc/inicio">Noticias</a>
 			<a href="/mvc/tareas_recibidas_alumno">Tareas recibidas</a>
 			<a href="/mvc/tareas_enviadas_alumno">Tareas enviadas</a>
-			<a href="#">Evaluacion de opcion multiple</a>
+			<a href="/mvc/examen_menu_alumnos">Evaluacion de opcion multiple</a>
 			<a href="../calendario/index.php">Calendario</a>
 			<a href="/mvc/chat">Chat</a>
 	 	</nav>

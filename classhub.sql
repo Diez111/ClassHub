@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 04-08-2022 a las 15:50:47
+-- Servidor: localhost
+-- Tiempo de generación: 05-08-2022 a las 01:19:02
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.28
+-- Versión de PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -63,15 +63,22 @@ CREATE TABLE `exam_question` (
   `ans2` varchar(300) DEFAULT NULL,
   `ans3` varchar(300) DEFAULT NULL,
   `ans4` varchar(300) DEFAULT NULL,
-  `res_correct` int(1) DEFAULT NULL
+  `res_correct` int(1) DEFAULT NULL,
+  `res_user` int(3) NOT NULL DEFAULT 0,
+  `user_id` int(3) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `exam_question`
 --
 
-INSERT INTO `exam_question` (`quest_id`, `test_id`, `quest_desc`, `ans1`, `ans2`, `ans3`, `ans4`, `res_correct`) VALUES
-(1, 19, 'holaaaaaaaaa', 'sas', 'ses', 'lol', 'sus', 4);
+INSERT INTO `exam_question` (`quest_id`, `test_id`, `quest_desc`, `ans1`, `ans2`, `ans3`, `ans4`, `res_correct`, `res_user`, `user_id`) VALUES
+(1, 19, 'holaaaaaaaaa', 'sas', 'ses', 'lol', 'sus', 4, 0, 0),
+(2, 20, 'hola', '1', '2', '3', '4', 5, 0, 0),
+(8, 22, 'p1', '1', '2', '3', '4', 1, 1, 19),
+(9, 22, 'p2', '1', '2', '3', '4', 2, 2, 19),
+(10, 22, 'p3', '1', '2', '3', '4', 3, 3, 19),
+(11, 22, 'p4', '1', '2', '3', '4', 4, 1, 19);
 
 -- --------------------------------------------------------
 
@@ -113,6 +120,28 @@ INSERT INTO `exam_result` (`login`, `test_id`, `test_date`, `score`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `exam_results`
+--
+
+CREATE TABLE `exam_results` (
+  `user_id` int(3) NOT NULL,
+  `test_id` int(3) NOT NULL,
+  `nota` int(3) NOT NULL,
+  `cant_quest` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `exam_results`
+--
+
+INSERT INTO `exam_results` (`user_id`, `test_id`, `nota`, `cant_quest`) VALUES
+(19, 22, 0, 4),
+(19, 22, 3, 4),
+(19, 22, 3, 4);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `exam_subject`
 --
 
@@ -138,7 +167,9 @@ INSERT INTO `exam_subject` (`idtema`, `tema`) VALUES
 (10, 'PRUEBA'),
 (11, 'GAS'),
 (12, 'Almaraz'),
-(13, 'sadasd');
+(13, 'sadasd'),
+(14, 'Tucson'),
+(15, 'Pruebafinal');
 
 -- --------------------------------------------------------
 
@@ -167,23 +198,9 @@ INSERT INTO `exam_test` (`test_id`, `idtema`, `test_name`, `total_que`) VALUES
 (14, 10, 'PRUEBA2', '2'),
 (15, 11, 'GASJUAREZ', '3'),
 (16, 8, 'vectores', '10'),
-(17, 0, 'epewoadkasokdasldkasldk', '5'),
-(18, 0, 'pepepepe', '3'),
-(19, 13, 'pepe', '3');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `exam_userans`
---
-
-CREATE TABLE `exam_userans` (
-  `usuario_id` int(5) NOT NULL,
-  `pregunta_id` int(5) NOT NULL,
-  `prueba_id` int(5) NOT NULL,
-  `res_user` int(3) NOT NULL,
-  `res_correct` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(19, 13, 'pepe', '3'),
+(20, 14, 'xadasd', '5'),
+(22, 15, 'Domadosssssssssss', '4');
 
 -- --------------------------------------------------------
 
@@ -209,6 +226,29 @@ INSERT INTO `materia` (`idmateria`, `materia`) VALUES
 (6, 'electronica'),
 (7, 'fundamento'),
 (8, 'comunicaciones');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `noticias`
+--
+
+CREATE TABLE `noticias` (
+  `idnoticia` int(11) NOT NULL,
+  `titulo` varchar(100) NOT NULL,
+  `contenido` varchar(800) NOT NULL,
+  `fecha_subido` datetime NOT NULL,
+  `nombre_archivo` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `noticias`
+--
+
+INSERT INTO `noticias` (`idnoticia`, `titulo`, `contenido`, `fecha_subido`, `nombre_archivo`) VALUES
+(1, 'Prueba', 'adsjksdfbhjsefbhjsefbhsfdhsdfhjsdfbh', '2022-08-04 16:11:52', 'Captura desde 2022-08-04 14-08-50.png'),
+(2, 'Prueba2', 'dqwdqhebwqbeuyqwbeub', '2022-08-04 16:13:46', 'GRUPO-2_PLANIFICACION-DEL-PROYECTO.xlsx'),
+(3, 'Prueba3', 'asdiuuysadgabwuydbqwuyawb', '2022-08-04 16:17:04', '');
 
 -- --------------------------------------------------------
 
@@ -255,7 +295,8 @@ CREATE TABLE `tarea` (
 INSERT INTO `tarea` (`idtarea`, `curso`, `materia`, `titulo`, `descripcion`, `fecha_creacion`, `idcreador`, `nombre_archivo`, `rol`) VALUES
 (4, 10, 1, 'PEPEPEPEPEOPE', 'ETE SECH AMOGUS', '2022-08-04 01:02:41', 18, 'TP Investigacion.docx', 1),
 (5, 10, 2, 'uihuihuh', 'yguygyuguyygu', '2022-08-04 01:43:00', 18, 'mvc2.zip', 1),
-(6, 10, 8, 'prueba', 'asdasdasdsadasdasdasdasdasd', '2022-08-04 03:27:47', 28, 'indumentaria altas temperaturas.pdf', 2);
+(6, 10, 8, 'prueba', 'asdasdasdsadasdasdasdasdasd', '2022-08-04 03:27:47', 28, 'indumentaria altas temperaturas.pdf', 2),
+(7, 11, 8, 'prueba', NULL, '2022-08-04 16:47:01', 19, 'GRUPO-2_PLANIFICACION-DEL-PROYECTO.xlsx', 3);
 
 -- --------------------------------------------------------
 
@@ -322,6 +363,12 @@ ALTER TABLE `materia`
   ADD PRIMARY KEY (`idmateria`);
 
 --
+-- Indices de la tabla `noticias`
+--
+ALTER TABLE `noticias`
+  ADD PRIMARY KEY (`idnoticia`);
+
+--
 -- Indices de la tabla `rol`
 --
 ALTER TABLE `rol`
@@ -357,25 +404,31 @@ ALTER TABLE `curso`
 -- AUTO_INCREMENT de la tabla `exam_question`
 --
 ALTER TABLE `exam_question`
-  MODIFY `quest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `quest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `exam_subject`
 --
 ALTER TABLE `exam_subject`
-  MODIFY `idtema` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idtema` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `exam_test`
 --
 ALTER TABLE `exam_test`
-  MODIFY `test_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `test_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `materia`
 --
 ALTER TABLE `materia`
   MODIFY `idmateria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `noticias`
+--
+ALTER TABLE `noticias`
+  MODIFY `idnoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
@@ -387,7 +440,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `tarea`
 --
 ALTER TABLE `tarea`
-  MODIFY `idtarea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idtarea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`

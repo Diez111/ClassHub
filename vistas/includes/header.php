@@ -7,7 +7,7 @@
 					<nav class="menu">
 						<a href="#">Desarroladores</a>
 						<a href="https://github.com/Diez111/ClassHub">GitHub</a>
-						<a href="inicio/salir">Salir</a>
+						<a href="/mvc/inicio/salir">Salir</a>
 						<a class="user"> <?php echo "{$nombre} - {$rol}" ?> </a>
 					</nav>
 			</div>

@@ -17,7 +17,7 @@ require_once ROOT . '/mvc/system/session.php';
 			header('location: /mvc/login');
 		}
 
-		if ($this->session->get('rol') != 1) {
+		if ($this->session->get('rol') == 3) {
 			header('location: /mvc/errorpage');
 		}
 	}
