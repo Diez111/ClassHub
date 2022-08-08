@@ -388,6 +388,7 @@ ALTER TABLE `usuario`
   ADD KEY `rol` (`rol`),
   ADD KEY `idusuario` (`idusuario`),
   ADD KEY `curso` (`curso`),
+	 ADD COLUMN recuperar varchar(8) NOT NULL,
   ADD KEY `materia` (`materia`);
 
 --

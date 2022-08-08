@@ -13,8 +13,10 @@
 	<br><br><br><br><br><br>
 		<table>
 			<tr class="tabla">
-				<th>id prueba</th>
-				<th>Prueba</th>
+				<th>ID Tema</th>
+				<th>ID Prueba</th>
+				<th>Nombre Prueba</th>
 				<th>Total preguntas</th>
+				<th>Acciones</th>
 			</tr>
 		

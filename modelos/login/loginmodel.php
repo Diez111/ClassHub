@@ -66,6 +66,19 @@ class loginmodel extends model
 		$this->db->query($sql);
 	}
 
+
+
+	public function createRandomPassword($parametros, $ramdo)
+	{
+		$recuperar = $ramdo;
+
+		$usuario = $this->db->real_escape_string($parametros['usuario']);
+
+		$sql = "UPDATE usuario SET recuperar= '$recuperar' WHERE `usuario`='{$usuario}'";
+
+		$this->db->query($sql);
+	}
+
 }
 
 ?>

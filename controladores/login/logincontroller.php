@@ -59,6 +59,10 @@ class logincontroller extends controller
 		}
 	}
 
+
+
+
+
 	public function verificar($parametros)
 	{
 		return empty($parametros['usuario']) || empty($parametros['clave']);
@@ -69,6 +73,36 @@ class logincontroller extends controller
 		$params = array('mensaje_de_error' => $mensaje);
 		$this->render(__CLASS__, $params);
 	}
+
+
+
+		public function generarCodigo() { 
+
+    $chars = "abcdefghijkmnopqrstuvwxyz023456789"; 
+    srand((double)microtime()*1000000); 
+    $i = 0; 
+    $ramdo = '' ; 
+
+    while ($i <= 7) { 
+        $num = rand() % 33; 
+        $tmp = substr($chars, $num, 1); 
+        $ramdo = $ramdo . $tmp; 
+        $i++; 
+    } 
+
+		$this->model->createRandomPassword($ramdo);
+
+
+	}
 }
+
+
+
+
+
+
+
+
+
 
 ?>

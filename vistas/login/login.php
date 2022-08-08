@@ -17,10 +17,13 @@
 
 			<input type="password" name="clave" placeholder="Contraseña"> <!-- El texto ingresado en en esta opcion se puede llamar en php para usarla como string -->
 
-			<div class="alert"> <?php !empty($mensaje_de_error) ?  print($mensaje_de_error) : '' ?> </div> <!-- Muestra las alertas que mande php -->
+			<div class="alert"> <?php !empty($mensaje_de_error) ?  print($mensaje_de_error) : '' ?></div> <!-- Muestra las alertas que mande php -->
 
 			<input type="submit" value="INICIAR">
 
+			<center><a href="/mvc/recuperar_contra/recuperar_contra.php">Manda un mail al admin explicando tu situacion</a></center>
+
+			
 		</form>
 
 	</section>
