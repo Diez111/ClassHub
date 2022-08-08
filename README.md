@@ -18,5 +18,5 @@ contraseña: 123456
 funciones hasta el momento:
 
 
-![image](https://user-images.githubusercontent.com/71948453/183325622-c499011b-70fc-4da0-b804-8ad4839b50d7.png)
+![image](https://user-images.githubusercontent.com/71948453/183325650-d6371b94-f274-452f-8965-692f9480324e.png)
 
