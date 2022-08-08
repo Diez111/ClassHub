@@ -14,7 +14,7 @@ contraseña: 123456
 
 
 <p align="center">
-  <img src="[https://user-images.githubusercontent.com/71948453/183325650-d6371b94-f274-452f-8965-692f9480324e.png](https://user-images.githubusercontent.com/71948453/181846983-f0fa3bee-5e47-4149-8d4e-659639bde15a.png)" alt="Sublime's custom image"/>
+  <img src="![image](https://user-images.githubusercontent.com/71948453/183325984-2cc3aef4-a327-4384-ac74-f580d78d4f9d.png)" alt="Sublime's custom image"/>
 </p>
 
 
