@@ -17,9 +17,12 @@ contraseña: 123456
 
 funciones hasta el momento:
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/71948453/183325650-d6371b94-f274-452f-8965-692f9480324e.png" alt="Sublime's custom image"/>
+</p>
 
 
-  ![image](https://user-images.githubusercontent.com/71948453/183325650-d6371b94-f274-452f-8965-692f9480324e.png)
+
 
 
 
