@@ -19,10 +19,8 @@ funciones hasta el momento:
 
 
 
-<p align="center">
   ![image](https://user-images.githubusercontent.com/71948453/183325650-d6371b94-f274-452f-8965-692f9480324e.png)
 
-</p>
 
 
 
