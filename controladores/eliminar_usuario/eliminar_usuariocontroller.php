@@ -36,7 +36,7 @@ class eliminar_usuariocontroller extends controller
 		$this->render(__CLASS__, $params);
 	}
 
-	public function eliminar_usuario($parametros)
+	public function eliminar($parametros)
 	{
 		$this->model->Eliminar_usuario($parametros);
 		$this->model->close();

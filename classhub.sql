@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 05-08-2022 a las 01:19:02
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 10-08-2022 a las 05:47:45
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.29
+-- Versión de PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -52,6 +52,28 @@ INSERT INTO `curso` (`idcurso`, `curso`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `exam_notas`
+--
+
+CREATE TABLE `exam_notas` (
+  `nota_id` int(11) NOT NULL,
+  `test_id` int(5) NOT NULL,
+  `user_id` int(5) NOT NULL,
+  `nota` int(3) NOT NULL,
+  `cant_quest` int(3) NOT NULL,
+  `tema_id` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `exam_notas`
+--
+
+INSERT INTO `exam_notas` (`nota_id`, `test_id`, `user_id`, `nota`, `cant_quest`, `tema_id`) VALUES
+(2, 22, 19, 3, 4, 15);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `exam_question`
 --
 
@@ -63,81 +85,20 @@ CREATE TABLE `exam_question` (
   `ans2` varchar(300) DEFAULT NULL,
   `ans3` varchar(300) DEFAULT NULL,
   `ans4` varchar(300) DEFAULT NULL,
-  `res_correct` int(1) DEFAULT NULL,
-  `res_user` int(3) NOT NULL DEFAULT 0,
-  `user_id` int(3) NOT NULL DEFAULT 0
+  `res_correct` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `exam_question`
 --
 
-INSERT INTO `exam_question` (`quest_id`, `test_id`, `quest_desc`, `ans1`, `ans2`, `ans3`, `ans4`, `res_correct`, `res_user`, `user_id`) VALUES
-(1, 19, 'holaaaaaaaaa', 'sas', 'ses', 'lol', 'sus', 4, 0, 0),
-(2, 20, 'hola', '1', '2', '3', '4', 5, 0, 0),
-(8, 22, 'p1', '1', '2', '3', '4', 1, 1, 19),
-(9, 22, 'p2', '1', '2', '3', '4', 2, 2, 19),
-(10, 22, 'p3', '1', '2', '3', '4', 3, 3, 19),
-(11, 22, 'p4', '1', '2', '3', '4', 4, 1, 19);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `exam_result`
---
-
-CREATE TABLE `exam_result` (
-  `login` varchar(20) DEFAULT NULL,
-  `test_id` int(5) DEFAULT NULL,
-  `test_date` date DEFAULT NULL,
-  `score` int(3) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `exam_result`
---
-
-INSERT INTO `exam_result` (`login`, `test_id`, `test_date`, `score`) VALUES
-('raj', 8, '0000-00-00', 3),
-('raj', 9, '0000-00-00', 3),
-('raj', 8, '0000-00-00', 1),
-('ashish', 10, '0000-00-00', 3),
-('ashish', 9, '0000-00-00', 2),
-('ashish', 10, '0000-00-00', 0),
-('raj', 8, '0000-00-00', 0),
-('ankur', 11, '0000-00-00', 0),
-('admin', 12, '0000-00-00', 0),
-('diez', 13, '0000-00-00', 2),
-('diez', 14, '0000-00-00', 2),
-('diez', 11, '0000-00-00', 0),
-('diez', 12, '0000-00-00', 0),
-('lautaro', 14, '0000-00-00', 2),
-('diez', 14, '0000-00-00', 2),
-('Lautaro', 14, '0000-00-00', 2),
-('Lautaro', 15, '0000-00-00', 2),
-('diez', 15, '0000-00-00', 3);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `exam_results`
---
-
-CREATE TABLE `exam_results` (
-  `user_id` int(3) NOT NULL,
-  `test_id` int(3) NOT NULL,
-  `nota` int(3) NOT NULL,
-  `cant_quest` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `exam_results`
---
-
-INSERT INTO `exam_results` (`user_id`, `test_id`, `nota`, `cant_quest`) VALUES
-(19, 22, 0, 4),
-(19, 22, 3, 4),
-(19, 22, 3, 4);
+INSERT INTO `exam_question` (`quest_id`, `test_id`, `quest_desc`, `ans1`, `ans2`, `ans3`, `ans4`, `res_correct`) VALUES
+(1, 19, 'holaaaaaaaaa', 'sas', 'ses', 'lol', 'sus', 4),
+(2, 20, 'hola', '1', '2', '3', '4', 5),
+(8, 22, 'p1', '1', '2', '3', '4', 1),
+(9, 22, 'p2', '1', '2', '3', '4', 2),
+(10, 22, 'p3', '1', '2', '3', '4', 3),
+(11, 22, 'p4', '1', '2', '3', '4', 4);
 
 -- --------------------------------------------------------
 
@@ -201,6 +162,30 @@ INSERT INTO `exam_test` (`test_id`, `idtema`, `test_name`, `total_que`) VALUES
 (19, 13, 'pepe', '3'),
 (20, 14, 'xadasd', '5'),
 (22, 15, 'Domadosssssssssss', '4');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `exam_userans`
+--
+
+CREATE TABLE `exam_userans` (
+  `res_id` int(11) NOT NULL,
+  `test_id` int(5) NOT NULL,
+  `res_user` int(3) NOT NULL,
+  `res_correct` int(3) NOT NULL,
+  `user_id` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `exam_userans`
+--
+
+INSERT INTO `exam_userans` (`res_id`, `test_id`, `res_user`, `res_correct`, `user_id`) VALUES
+(9, 22, 1, 1, 19),
+(10, 22, 2, 2, 19),
+(11, 22, 3, 3, 19),
+(12, 22, 2, 4, 19);
 
 -- --------------------------------------------------------
 
@@ -322,11 +307,13 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idusuario`, `nombre`, `correo`, `usuario`, `clave`, `rol`, `curso`, `materia`, `estatus`, `intentos`) VALUES
-(18, 'diez', 'lautaro10.colegio@gmail.com', 'diez', 'e10adc3949ba59abbe56e057f20f883e', 1, 10, 1, 1, 5),
+(18, 'diez', 'lautaro10.colegio@gmail.com', 'diez', 'e10adc3949ba59abbe56e057f20f883e', 1, 10, 1, 1, 5 ),
 (19, 'Lautaro', 'diezprocapoxd@gmail.com', 'Alumno', 'e10adc3949ba59abbe56e057f20f883e', 3, 11, 1, 1, 5),
 (20, 'Lautaro2', 'diezprocapoxd2@gmail.com', 'Profesor', 'e10adc3949ba59abbe56e057f20f883e', 2, 9, 1, 1, 5),
 (25, 'USUARIOPRUE', '33@gmail.com', 'ELBROMAS', 'e10adc3949ba59abbe56e057f20f883e', 1, 10, 1, 1, 5),
-(28, 'carlos', 'asldkjasdlk@gmail', 'carlos', '81dc9bdb52d04dc20036dbd8313ed055', 2, 10, 1, 1, 5);
+(30, 'jorge', 'jorge@gmail.com', 'El Chorch', '81dc9bdb52d04dc20036dbd8313ed055', 1, 10, NULL, 1, 5),
+(31, 'johni', 'joni@gmail.com', 'el shoni', '81dc9bdb52d04dc20036dbd8313ed055', 2, 11, NULL, 1, 5),
+(32, 'juan', 'juan@gmail.com', 'el juancho', '81dc9bdb52d04dc20036dbd8313ed055', 3, 10, NULL, 1, 5);
 
 --
 -- Índices para tablas volcadas
@@ -337,6 +324,12 @@ INSERT INTO `usuario` (`idusuario`, `nombre`, `correo`, `usuario`, `clave`, `rol
 --
 ALTER TABLE `curso`
   ADD PRIMARY KEY (`idcurso`);
+
+--
+-- Indices de la tabla `exam_notas`
+--
+ALTER TABLE `exam_notas`
+  ADD PRIMARY KEY (`nota_id`);
 
 --
 -- Indices de la tabla `exam_question`
@@ -355,6 +348,12 @@ ALTER TABLE `exam_subject`
 --
 ALTER TABLE `exam_test`
   ADD PRIMARY KEY (`test_id`);
+
+--
+-- Indices de la tabla `exam_userans`
+--
+ALTER TABLE `exam_userans`
+  ADD PRIMARY KEY (`res_id`);
 
 --
 -- Indices de la tabla `materia`
@@ -388,7 +387,6 @@ ALTER TABLE `usuario`
   ADD KEY `rol` (`rol`),
   ADD KEY `idusuario` (`idusuario`),
   ADD KEY `curso` (`curso`),
-	 ADD COLUMN recuperar varchar(8) NOT NULL,
   ADD KEY `materia` (`materia`);
 
 --
@@ -400,6 +398,12 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `curso`
   MODIFY `idcurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `exam_notas`
+--
+ALTER TABLE `exam_notas`
+  MODIFY `nota_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `exam_question`
@@ -418,6 +422,12 @@ ALTER TABLE `exam_subject`
 --
 ALTER TABLE `exam_test`
   MODIFY `test_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT de la tabla `exam_userans`
+--
+ALTER TABLE `exam_userans`
+  MODIFY `res_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `materia`
@@ -447,7 +457,7 @@ ALTER TABLE `tarea`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
