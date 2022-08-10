@@ -19,9 +19,11 @@ class eliminar_usuariomodel extends model
     	return $this->db->query($sql);
 	}
 
-	public function Eliminar_usuario($id)
+	public function Eliminar_usuario($parametros)
 	{
-		$sql = "DELETE FROM `usuario` WHERE idusuario = '$id'";
+		extract($parametros);
+
+		$sql = "DELETE FROM `usuario` WHERE idusuario = '$idusuario'";
 
 		$this->db->query($sql);
 	}

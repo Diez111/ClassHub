@@ -18,11 +18,11 @@
 			<p>Usuario: <?= $usuario ?></p>
 			<p>Tipo Usuario: <?= $rol_u ?></p>
 
-			<form method="post" action="<?= FOLDER_PATH . '/eliminar_usuario/eliminar/' . $id?>">
+			<form method="post" action="<?= FOLDER_PATH . '/eliminar_usuario/eliminar/' ?>">
 				<input type="hidden" name="idusuario" value="<?= $id ?>">
-				<a href="/mvc/lista_usuarios" class="btn_cancel">Cancelar</a>
 				<input type="submit" value="Aceptar" class="btn_ok">
 			</form>
+				<a href="/mvc/lista_usuarios" class="btn_cancel">Cancelar</a>
 		</div>
 	</section>	
 

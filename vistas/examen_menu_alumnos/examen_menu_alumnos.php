@@ -25,7 +25,7 @@
 	<?php include "vistas/includes/nav.php"; ?>
 
 
-echo "<br><br><br><br><br>
+<br><br><br><br><br>
 
 
 <h1 class='style8' align=center>Examen</h1>
@@ -41,7 +41,7 @@ echo "<br><br><br><br><br>
   </tr>
   <tr>
     <td  width="7%" height="65" valign="bottom"><img src="assets/crear imagen.JPG" width="43" height="43" align="absmiddle"></td>
-    <td width="93%" valign="bottom" bordercolor="#0000FF"> <a href="result.php" class="alert alert-danger">Resultado </a></td>
+    <td width="93%" valign="bottom" bordercolor="#0000FF"> <a href="/mvc/examen_ranking" class="alert alert-danger">Resultado </a></td>
   </tr>
 
 
