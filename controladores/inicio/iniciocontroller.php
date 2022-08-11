@@ -72,24 +72,24 @@ class iniciocontroller extends controller
 	?>
 
 
-
+<center>
 
 	<div class="form_register">
 		<form action="<?= FOLDER_PATH . '/inicio/crear_noticia' ?>" method="post" style="width: 600px;" enctype="multipart/form-data">
-			<label for="titulo">Titulo</label>
+			<label for="titulo"><font size=5> Titulo</font></label>
 			<input type="text" name="titulo" id="titulo" placeholder="Titulo" style="width: 550px;">
-			<br><br>
-			<label for="contenido">Contenido</label>
+			<br>
+			<label for="contenido"><font size=4> Contenido</font></label>
 			<textarea name="contenido" id="contenido" placeholder="Contenido" rows="10" style="width: 550px; resize: none;"></textarea>
-			<br><br>
-			<label for="archivo">Archivo</label>
-			<input type="file" name="archivo" id="archivo" style="width: 550px;">
+			<br>
+			<center><label for="archivo"><font size=4> Archivo</font></label></center>
+			<center><input type="file" name="archivo" id="archivo" style="width: 550px;"></center>
 
 			<input type="submit" value="Crear Noticia" class="btn_save">
 		</form>
 	</div>
 
-
+</center>
 
 
 	<br>	<br>	<br>
