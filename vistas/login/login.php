@@ -4,8 +4,12 @@
 	<meta charset="UTF-8"> <!-- usamos los caracteres del español -->
 	<title>Login | Sistema Facturación</title>  <!-- El titulo de la pestaña -->
 	<link rel="stylesheet" type="text/css" href="/mvc/style.css"> <!-- llamamos al estilo -->
+	  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap" rel="stylesheet">
+
 </head>
-<body>
+<body >
+
+
 	<section id="container"> <!-- juntamos todos los datos de abajo en un contenedor -->
 
 		<form method="POST" action=" <?= FOLDER_PATH . '/login/signin' ?> " > <!-- Usamos el comando POST para mandar los datos que ingrese el usuario -->
@@ -27,5 +31,8 @@
 		</form>
 
 	</section>
+
 </body>
+
+
 </html>

@@ -11,19 +11,21 @@
 </head>
 <?php include "vistas/includes/header.php"; ?>
 	<?php include "vistas/includes/nav.php"; ?>
-<br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
 <body class="is-preload">
-<section id="container">
-<div style="margin:auto;width:90%;height:500px;box-shadow:2px 1px 2px 2px #CCCCCC;text-align:left">
-<div style="margin-left:20%;padding-top:5%">
 
-<p><a href="/mvc/examen_crear_tema"><font size=6>Añadir tema</font></a></p>
-<p><a href="/mvc/examen_crear_prueba"><font size=6>Agregar prueba</font></a></p>
-<p><a href="/mvc/examen_crear_pregunta"><font size=6>Agregar pregunta</font> </a></p>
-<p align="center" class="head1">&nbsp;</p>
+
+
+<center><button class="button-36" role="button" ><p><a href="/mvc/examen_crear_tema"><font color= dark size=6>Añadir tema</font></a></p></button></center>
+<br><br>
+<center><button class="button-36" role="button" href="/mvc/examen_crear_prueba"><p><a href="/mvc/examen_crear_prueba"><font color= dark size=6>Agregar prueba</font></a></p></button></center>
+<br><br>
+<center><button class="button-36" href="/mvc/examen_crear_pregunta"><p><a href="/mvc/examen_crear_pregunta"><font color= dark size=6>Agregar pregunta</font> </a></p></button></center>
+
+
 </div>
 </div>
-	</section>
+
 	<?php include "vistas/includes/footer.php"; ?>
 </body>
 </html>

@@ -15,5 +15,5 @@
 	<br><br><br><br>
 
 		<div class="form_register">
-		<h1>Tareas Recibidas</h1>
+		<center><h1>Tareas Recibidas</h1></center>
 		</div>

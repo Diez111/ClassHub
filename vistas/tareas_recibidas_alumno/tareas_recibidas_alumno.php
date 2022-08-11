@@ -12,4 +12,4 @@
 	<section id="container">
 
 	<br><br><br><br>
-		<h1>Tareas Recibidas</h1>
+		<center><h1>Tareas Recibidas</h1></center>

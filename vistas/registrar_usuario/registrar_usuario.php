@@ -12,10 +12,11 @@
 
 	<section id="container">
 	
-	<br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br>
+
 
 		<div class="form_register">
-			<h1>Registrar usuario</h1>
+			<center><h1>Registrar usuario</h1></center>
 
 			<form action="<?= FOLDER_PATH . '/registrar_usuario/registrar'?>" method="post">
 				<label for="nombre">Nombre</label>

@@ -15,7 +15,7 @@
 			<?php require "vistas/includes/nav.php"; ?>
 
 <br><br><br><br><br>
-	<div style="margin:auto;width:90%;height:500px;box-shadow:2px 1px 2px 2px #CCCCCC;text-align:left">
+	
 <title>Agregar Tema</title>
 	<form method="POST" action="<?= FOLDER_PATH . '/examen_crear_tema/agregar_tema'?>">
   <table width="41%"  border="0" align="center">
@@ -28,8 +28,8 @@
     </tr>
   </table>
 </form>
-</div>
-</div>
+
+
 
 
 	<?php require "vistas/includes/footer.php"; ?>

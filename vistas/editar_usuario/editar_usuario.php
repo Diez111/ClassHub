@@ -13,10 +13,10 @@
 
 	<section id="container">
 	
-	<br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br>
 
 		<div class="form_register">
-			<h1>Actualizar usuario</h1>
+			<center><h1>Actualizar usuario</h1></center>
 
 			<form action="<?= FOLDER_PATH . '/editar_usuario/update/' . $id?>" method="post">
 				<input type="hidden" name="id" value="<?= $id ?>">

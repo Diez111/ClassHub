@@ -15,7 +15,7 @@
 	<br><br><br><br>
 
 		<div class="form_register">
-		<h1>Crear Tarea</h1>
+		<center><h1>Crear Tarea</h1></center>
 		<form action="<?= FOLDER_PATH . '/tareas_enviar/crear_tarea' ?>" method="post" style="width: 500px;" enctype="multipart/form-data">
 			<input type="hidden" name="id" value="<?= $id ?>">
 			<input type="hidden" name="rol" value="<?= $rol ?>">
