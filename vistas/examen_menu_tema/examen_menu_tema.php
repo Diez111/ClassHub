@@ -11,9 +11,14 @@
 	<?php require "vistas/includes/nav.php"; ?>
 	<section id="container">
 	<br><br><br><br><br><br>
-		<table>
-			<tr class="tabla">
-				<th>id tema</th>
-				<th>tema</th>
-			</tr>
+
+			<div class="container">
+        <table class="table">
+
+ 			 <thead>
+                <tr>
+                   <center><th>id tema</th></center> 
+                     <center><th>tema</th></center> 
+                </tr>
+            </thead>
 		

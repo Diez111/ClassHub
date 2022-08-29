@@ -9,16 +9,7 @@
 
 
 
-    <link href="http://localhost/exam/exam/css/style.css" rel="stylesheet" type="text/css" />
-    <!-- Bootstrap -->
-   <link href="http://localhost/exam/exam/css/bootstrap.min.css" rel="stylesheet" type="text/css" /><!-- INCLUYE AL BOSSTRAP ALA WEB -->
-    <link href="http://localhost/exam/exam/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-   <script src="http://localhost/exam/exam/datespicker/css/datepicker.css"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->      
-<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.7.2.custom.css" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
-<script type="text/javascript"></script>
+
 	<title>ClassHub</title>
 </head>
 <?php include "vistas/includes/header.php"; ?>
@@ -31,18 +22,49 @@
 <h1 class='style8' align=center>Examen</h1>
 
 
+  <div class="container">
+        <table class="table">
+
+       <thead>
+                <tr>
+                    <th>Icono</th>
+                    <th>Opcion</th>
+                </tr>
+            </thead>
 
 
-    
-    <table width="28%"  border="0" align="center">
-  <tr>
-    <td  width="7%" height="65" valign="bottom"><img src="assets/crear imagen.JPG" width="50" height="50" align="middle"></td>
-    <td width="93%" valign="bottom" bordercolor="#0000FF"> <a href="/mvc/examen_menu_tema" class="alert alert-danger">Temas con cuestionarios</a></td>
-  </tr>
-  <tr>
-    <td  width="7%" height="65" valign="bottom"><img src="assets/crear imagen.JPG" width="43" height="43" align="absmiddle"></td>
-    <td width="93%" valign="bottom" bordercolor="#0000FF"> <a href="/mvc/examen_ranking" class="alert alert-danger">Resultado </a></td>
-  </tr>
+
+
+
+
+      <tr>
+                    <td data-label="Icono" width="99%" height="90" valign="bottom"><img src="assets/iconos/icono_prueba_tarea.svg" width="auto" height="90" align="middle">
+
+                    </td>
+
+
+
+                    <td data-label="Opcion"><a href="/mvc/examen_menu_tema" class="alert alert-danger">Temas con cuestionarios</a></td>
+
+                </tr>
+
+   <tr>
+                <td data-label="Icono" width="99%" height="90" valign="bottom"><img src="assets/iconos/Icono_evaluacion.svg" width="auto" height="90" align="absmiddle">
+
+                    </td>
+
+
+
+                    <td data-label="Opcion"><a href="/mvc/examen_ranking" class="alert alert-danger">Resultado </a></td>
+ </tr>
+</center>
+
+
+
+
+
+
+
 
 
     

@@ -14,5 +14,5 @@
 	
 	<br><br><br><br>
 
-	<div class="form_register">
+	<div>
 		<form method="post" action="<?= FOLDER_PATH . "/examen_crear_pregunta/agregar_pregunta" ?>">

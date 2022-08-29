@@ -18,6 +18,14 @@
 			<a href="/mvc/chat">Chat</a>
 		</nav>
 			<label for="btn-menu">✖️</label>
+
+				<br><br><br><br>
+
+                <p class="destacado">
+                    <a class="weatherwidget-io" href="https://forecast7.com/es/n34d60n58d38/buenos-aires/"
+                        data-label_1="Buenos Aires - City" data-label_2="Clima" data-theme="original">Buenos Aires -
+                        City Clima</a>
+                </p>
 		</div>
 		</div>
 
@@ -26,6 +34,9 @@
 		</div>
 	</ul>
 </nav>
+
+
+
 <?php } ?>
 
 <?php
@@ -48,11 +59,19 @@
 			<a href="/mvc/chat">Chat</a>
 	 	</nav>
 	 		<label for="btn-menu">✖️</label>
+	 	
+	 						<br><br><br><br>
+
+	 		  <p class="destacado">
+                    <a class="weatherwidget-io" href="https://forecast7.com/es/n34d60n58d38/buenos-aires/"
+                        data-label_1="Buenos Aires - City" data-label_2="Clima" data-theme="original">Buenos Aires -
+                        City Clima</a>
+                </p>
 	 	</div>
 		</div>
 
 		<div class="logo">
-			<h1>ClassHub</h1>
+			 <h1>ClassHub</h1>
 		</div>
 	</ul>
 </nav>
@@ -76,6 +95,14 @@
 			<a href="/mvc/chat">Chat</a>
 	 	</nav>
 	 		<label for="btn-menu">✖️</label>
+
+	 						<br><br><br><br>
+
+	 		  <p class="destacado">
+                    <a class="weatherwidget-io" href="https://forecast7.com/es/n34d60n58d38/buenos-aires/"
+                        data-label_1="Buenos Aires - City" data-label_2="Clima" data-theme="original">Buenos Aires -
+                        City Clima</a>
+                </p>
 	 	</div>
 		</div>
 

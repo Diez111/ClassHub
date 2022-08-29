@@ -13,6 +13,6 @@
 	<section id="container">
 	
 	<br><br><br><br>
-
-	<div class="form_register">
-		<form method="post" action="<?= FOLDER_PATH . "/examen_crear_prueba/agregar_prueba" ?>">
+<center>
+	<div>
+		<form method="post" action="<?= FOLDER_PATH . "/examen_crear_prueba/agregar_prueba" ?>"></center>

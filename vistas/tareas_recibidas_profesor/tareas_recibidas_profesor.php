@@ -12,8 +12,7 @@
 
 	<section id="container">
 
-	<br><br><br><br>
-
-		<div class="form_register">
-		<center><h1>Tareas Recibidas</h1></center>
-		</div>
+	<br><br><br><br><br>
+	
+		<center> <h1 style="color: white;">Tareas Recibidas</h1> </center>
+	

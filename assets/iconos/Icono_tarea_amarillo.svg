@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg23204"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="Icono_tarea_amarillo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview23206"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.46947952"
+     inkscape:cx="396.18342"
+     inkscape:cy="562.32485"
+     inkscape:window-width="1366"
+     inkscape:window-height="699"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs23201" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#f3c515;fill-opacity:0.943724;stroke:#000000;stroke-width:1.28213;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5024-3"
+       width="138.71786"
+       height="178.71786"
+       x="30.641066"
+       y="30.641066" />
+    <rect
+       style="fill:#ffffff;fill-opacity:0.943724;stroke:#000000;stroke-width:1.99167;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5749-7"
+       width="100.10045"
+       height="44.287239"
+       x="50.014767"
+       y="46.375046" />
+    <path
+       style="fill:#ffffff;fill-opacity:0.943724;stroke:#000000;stroke-width:1.28214;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 59.980243,68.319188 78.133947,-0.39224 z"
+       id="path14577-3-5" />
+    <path
+       style="fill:#ffffff;fill-opacity:0.943724;stroke:#000000;stroke-width:1.28214;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 60.043003,79.978537 138.17695,79.586298 Z"
+       id="path14577-5-9" />
+    <path
+       style="fill:#ffffff;fill-opacity:0.943724;stroke:#000000;stroke-width:1.28214;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 59.926733,57.868148 78.133947,-0.39226 z"
+       id="path14577-22" />
+  </g>
+</svg>

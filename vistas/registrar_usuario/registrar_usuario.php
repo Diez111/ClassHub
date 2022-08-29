@@ -15,8 +15,8 @@
 	<br><br><br><br><br><br><br><br><br><br><br>
 
 
-		<div class="form_register">
-			<center><h1>Registrar usuario</h1></center>
+		<div>
+			<center><h1 style="color:white";>Registrar usuario</h1></center>
 
 			<form action="<?= FOLDER_PATH . '/registrar_usuario/registrar'?>" method="post">
 				<label for="nombre">Nombre</label>
