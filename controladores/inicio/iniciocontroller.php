@@ -17,6 +17,7 @@ class iniciocontroller extends controller
 			header('location: /mvc/login');
 		}
 	}
+	
 
 	public function crear_noticia($parametros)
 	{
@@ -74,16 +75,16 @@ class iniciocontroller extends controller
 
 <center>
 
-	<div class="form_register">
-		<form action="<?= FOLDER_PATH . '/inicio/crear_noticia' ?>" method="post" style="width: 600px;" enctype="multipart/form-data">
+	<div >
+		<form action="<?= FOLDER_PATH . '/inicio/crear_noticia' ?>" method="post" style="width: 350px;" enctype="multipart/form-data">
 			<label for="titulo"><font size=5> Titulo</font></label>
-			<input type="text" name="titulo" id="titulo" placeholder="Titulo" style="width: 550px;">
+			<input type="text" name="titulo" id="titulo" placeholder="Titulo" style="width: 300px;">
 			<br>
 			<label for="contenido"><font size=4> Contenido</font></label>
-			<textarea name="contenido" id="contenido" placeholder="Contenido" rows="10" style="width: 550px; resize: none;"></textarea>
+			<textarea name="contenido" id="contenido" placeholder="Contenido" rows="10" style="width: 300px; resize: none;"></textarea>
 			<br>
 			<center><label for="archivo"><font size=4> Archivo</font></label></center>
-			<center><input type="file" name="archivo" id="archivo" style="width: 550px;"></center>
+			<center><input type="file" name="archivo" id="archivo" style="width: 300px;"></center>
 
 			<input type="submit" value="Crear Noticia" class="btn_save">
 		</form>
@@ -92,7 +93,7 @@ class iniciocontroller extends controller
 </center>
 
 
-	<br>	<br>	<br>
+	<br><br><br>
 		<?php
 		}
 		$query = $this->model->noticias();
@@ -104,41 +105,26 @@ class iniciocontroller extends controller
 		if ($query->num_rows) {
 			while ($datos = $query->fetch_assoc()) {
 				?>
-			<article>
+	<div class="container">
+        <table class="table">
+
+ 			 <thead>
+                <tr>
+                    <th>titulo</th>
+                    <th>Fecha de Creacion</th>
+                    <th>Archivo</th>
+                </tr>
+            </thead>
 				
 
+			<center> 
 
+				<tr>
+                    <td data-label="titulo"><?= $datos['titulo'] ?></td>
+                    <td data-label="fecha_subido"><p><?= $datos['fecha_subido'] ?></p></td>
+                    <td data-label="Archivo"> 
 
-<div class="container">
-    <div class="row mb-5">
-  
-    </div>
-    
-
-    
-    <!--start code-->
-	<div class="container">
-	    <div class="col-12 py-4 bg-dark">
-    	    <div class="row">
-                <!--Breaking box-->
-                <div class="col-md-3 col-lg-2 pr-md-0">
-                    <div class="p-2 bg-primary text-white text-center breaking-caret"><span class="font-weight-bold"><p><?= $datos['titulo'] ?></p></span></div>
-                </div>
-                <!--end breaking box-->
-                <!--Breaking content-->
-                <div class="col-md-9 col-lg-10 pl-md-4 py-2">
-                    <div class="breaking-box">
-                        <div id="carouselbreaking" class="carousel slide" data-ride="carousel">
-                            <!--breaking news-->
-                            <div class="carousel-inner">
-                                <!--post-->
-                                <div >
-                                    <a ><span class="position-relative mx-2 badge badge-primary rounded-0"><p><?= $datos['fecha_subido'] ?></p></span></a> <a class="text-white" ><p><?= $datos['contenido'] ?></p></p></span></a> <a class="text-white" >
-
-                                   <p>
-
-
-			<?php
+                    			<?php
 				if ($datos['nombre_archivo'] != '') {
 				?>
 				<a href="archivos_subidos/<?= $datos['nombre_archivo'] ?>" download><?= $datos['nombre_archivo'] ?></a>
@@ -148,6 +134,17 @@ class iniciocontroller extends controller
 
 
 			  ?>
+
+                    </td>
+
+
+                   
+                </tr>
+
+</center>
+
+
+
 
 
 
@@ -168,11 +165,6 @@ class iniciocontroller extends controller
 
 
 
-
-
-
-				
-			</article>
 				<?php
 			}
 		}

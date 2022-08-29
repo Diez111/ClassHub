@@ -32,20 +32,29 @@ class lista_usuarioscontroller extends controller
 		if ($query->num_rows) {
 			while ($datos = $query->fetch_assoc()) {
 		?>
-			<tr>
-                <td><?php echo $datos['idusuario']; ?></td>
-                <td><?php echo $datos['nombre']; ?></td>
-                <td><?php echo $datos['correo']; ?></td>
-                <td><?php echo $datos['usuario']; ?></td>
-                <td><?php echo $datos['rol'] ?></td>
-                <td><?php echo $datos['curso'] ?></td>
-                <td>
+
+
+
+
+				 <tr>
+                    <td data-label="Nombre"><?php echo $datos['nombre']; ?></td>
+                    <td data-label="Usuario"><?php echo $datos['usuario']; ?></td>
+                    <td data-label="Curso"><?php echo $datos['curso'] ?></td>
+                    <td data-label="Acciones">
+                    	
+                    	 
                 <a class="link_edit" href="/mvc/editar_usuario/exec/<?= "{$datos['idusuario']}" ?>">Editar</a>
 
                 <a class="link_delete" href="/mvc/eliminar_usuario/exec/<?= "{$datos['idusuario']}" ?>">Eliminar</a>
                 </td>
-            </tr>
+                    </td>
+                </tr>
 
+
+
+
+
+		
 		<?php 
 			} 
 		}

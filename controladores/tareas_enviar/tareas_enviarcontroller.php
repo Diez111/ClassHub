@@ -85,15 +85,24 @@ class tareas_enviarcontroller extends controller
 		$this->render(__CLASS__, $params);
 
 		?>
+
+		<center>
+
+	<div >
+		<form action="<?= FOLDER_PATH . '/inicio/crear_noticia' ?>" method="post" style="width: 350px;" enctype="multipart/form-data">
 			<label for="nom_tarea">Nombre de la Tarea</label>
-			<input type="text" name="nom_tarea" style="width: 450px">
+			<center><input type="text" name="nom_tarea" style="width: 300px"></center>
 			<label for="desc_tarea">Descripcion</label>
-			<textarea name="desc_tarea" id="desc_tarea" rows="10" style="resize: none; width: 450px;"></textarea>
+			<center><textarea name="desc_tarea" id="desc_tarea" rows="10" style="resize: none; width: 300px;"></textarea></center>
 			<label for="archivo">Archivo</label>
-			<input type="file" name="archivo" id="archivo" style="width: 450px;">
+			<center><input type="file" name="archivo" id="archivo" style="width: 300px;"></center>
 			<label for="curso">Curso</label>
 			<select name="curso" id="curso" class="notItemOne">
 				<option value="" selected>Seleccione un curso</option>
+
+
+
+
 		<?php
 		$query = $this->model->cursos();
 
@@ -126,19 +135,34 @@ class tareas_enviarcontroller extends controller
 			<input type="submit" value="Crear Tarea" class="btn_save">
 		</form>
 		</div>
+		
+	</div>
+
+</center>
+
+
+
 
 		<br><br><br><br><br><br>
 		<table>
-			<tr class="tabla">
-				<th>Curso</th>
-				<th>Materia</th>
-				<th>Creador</th>
-				<th>Titulo</th>
-				<th>Descripcion</th>
-				<th>Fecha de Creacion</th>
-				<th>Archivo</th>
-				<th>Acciones</th>
-			</tr>
+
+		<div class="container">
+        <table class="table">
+
+ 			 <thead>
+                <tr>
+                    <th>Curso</th>
+                    <th>Materia</th>
+                    <th>nombre</th>
+					<th>Titulo</th>
+					<th>Descripcion</th>
+					<th>Fecha de Creacion</th>
+					<th>archivos_subidos</th>
+					<th>Acciones</th>
+                </tr>
+            </thead>
+
+
 
 		<?php
 		$query = $this->model->tareas();
@@ -146,18 +170,25 @@ class tareas_enviarcontroller extends controller
 		if ($query->num_rows) {
 			while ($datos = $query->fetch_assoc()) {
 				?>
+
 				<tr>
-					<td><?= $datos['curso'] ?></td>
-					<td><?= $datos['materia'] ?></td>
-					<td><?= $datos['nombre'] ?></td>
-					<td><?= $datos['titulo'] ?></td>
-					<td><?= $datos['descripcion'] ?></td>
-					<td><?= $datos['fecha_creacion'] ?></td>
-					<td><a href="archivos_subidos/<?= $datos['nombre_archivo'] ?>" download><?= $datos['nombre_archivo'] ?></a></td>
-					<td>
-                	<a class="link_delete" href="/mvc/tareas_enviar/eliminar_tarea/<?= "{$datos['idtarea']}" ?>">Eliminar</a>
-					</td>
-				</tr>
+                   	 <td data-label="curso"><?= $datos['curso'] ?> </td>
+                	  <td data-label="materia"><?= $datos['materia'] ?> </td>
+                    <td data-label="nombre"><?= $datos['nombre'] ?> </td>
+                    <td data-label="titulo"><?= $datos['titulo'] ?> </td>
+                    <td data-label="descripcion"><?= $datos['descripcion'] ?> </td>
+                    <td data-label="fecha_creacion"><?= $datos['fecha_creacion'] ?> </td>
+                    <td data-label="archivos_subidos"><a href="archivos_subidos/<?= $datos['nombre_archivo'] ?>" download><?= $datos['nombre_archivo'] ?></a></td>
+                      <td data-label="archivos_subidos"><a class="link_delete" href="/mvc/tareas_enviar/eliminar_tarea/<?= "{$datos['idtarea']}" ?>">Eliminar</a></td>
+
+
+                   
+                </tr>
+
+
+
+
+
 				<?php
 			}
 		}

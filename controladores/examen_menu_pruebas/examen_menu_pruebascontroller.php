@@ -29,18 +29,25 @@ class examen_menu_pruebascontroller extends controller
 		if ($query->num_rows) {
 			while ($datos = $query->fetch_assoc()) {
 		?>
-			<tr>
-                <td><?= $datos['idtema'] ?></td>
-                <td><?= $datos['test_id'] ?></td>
-                <td><?= $datos['test_name'] ?></td>
-                <td><?= $datos['total_que'] ?></td>
-                <td><a href="/mvc/examen_responder/exec/<?= $datos['test_id'] ?>">Hacer Prueba</a></td>
-            </tr>
+
+
+
+
+	<tr>
+                    <td data-label="test_name"><?= $datos['test_name'] ?></td>
+                    <td data-label="total_que"><?= $datos['total_que'] ?></td>
+                      <td data-label="Hacer"><a href="/mvc/examen_responder/exec/<?= $datos['test_id'] ?>">Hacer Prueba</a></td>
+                   
+
+                   
+                </tr>
+
 
 		<?php 
 			} 
 		}
 		?>
+
 
 			</table>
 		</section>

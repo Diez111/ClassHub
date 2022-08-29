@@ -30,7 +30,22 @@ class registrar_usuariocontroller extends controller
 
 	public function registrar($parametros)
 	{
-		$this->model->nuevo_usuario($parametros);
+		$str = 'curso';
+		$n = 1;
+		$cursos = '';
+
+		for ($i=1; $i < 12; $i++) { 
+			$str .= $n;
+			if (isset($parametros[$str])) {
+				$cursos .= '-';
+				$cursos .= $n;
+			}
+
+			$str = 'curso';
+			$n++;
+		}
+		
+		$this->model->nuevo_usuario($parametros, $cursos);
 		$this->model->close();
 		header('location: /mvc/lista_usuarios');
 	}

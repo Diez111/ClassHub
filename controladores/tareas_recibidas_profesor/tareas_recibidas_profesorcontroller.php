@@ -37,13 +37,23 @@ class tareas_recibidas_profesorcontroller extends controller
 		?>
 
 		<br><br><br><br><br><br>
-		<table>
-			<tr class="tabla">
-				<th>Curso</th>
-				<th>Titulo</th>
-				<th>Fecha de Creacion</th>
-				<th>Archivo</th>
-			</tr>
+
+
+	<div class="container">
+        <table class="table">
+
+ 			 <thead>
+                <tr>
+                    <th>Curso</th>
+                    <th>Titulo</th>
+                    <th>Fecha de Creacion</th>
+                    <th>Archivo</th>
+                </tr>
+            </thead>
+
+
+
+	
 
 		<?php
 		$query = $this->model->tareas();
@@ -51,12 +61,24 @@ class tareas_recibidas_profesorcontroller extends controller
 		if ($query->num_rows) {
 			while ($datos = $query->fetch_assoc()) {
 				?>
-				<tr>
-					<td><?= $datos['curso'] ?></td>
-					<td><?= $datos['titulo'] ?></td>
-					<td><?= $datos['fecha_creacion'] ?></td>
-					<td><a href="archivos_subidos/<?= $datos['nombre_archivo'] ?>" download><?= $datos['nombre_archivo'] ?></a></td>
-				</tr>
+
+				 <tr>
+                    <td data-label="Curso"><?= $datos['curso'] ?></td>
+                    <td data-label="Titulo"><?= $datos['titulo'] ?></td>
+                    <td data-label="Fecha de Creacion"><?= $datos['fecha_creacion'] ?></td>
+                    <td data-label="Archivo"> <a href="archivos_subidos/<?= $datos['nombre_archivo'] ?>" download><?= $datos['nombre_archivo'] ?></a> </td>
+                    </td>
+                </tr>
+
+
+
+
+
+
+
+
+
+			
 				<?php
 			}
 		}

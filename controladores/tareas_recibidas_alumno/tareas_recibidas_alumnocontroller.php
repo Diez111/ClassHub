@@ -37,16 +37,24 @@ class tareas_recibidas_alumnocontroller extends controller
 		?>
 
 		<br><br><br><br><br><br>
-		<table>
-			<tr class="tabla">
-				<th>Curso</th>
+
+	<div class="container">
+        <table class="table">
+
+ 			 <thead>
+                <tr>
+                   <th>Curso</th>
 				<th>Materia</th>
 				<th>Creador</th>
 				<th>Descripcion</th>
 				<th>Fecha de Creacion</th>
 				<th>Archivo</th>
 				<th>Acciones</th>
-			</tr>
+                </tr>
+            </thead>
+				
+
+
 
 		<?php
 		$query = $this->model->tareas();
@@ -54,17 +62,27 @@ class tareas_recibidas_alumnocontroller extends controller
 		if ($query->num_rows) {
 			while ($datos = $query->fetch_assoc()) {
 				?>
+
+
+
 				<tr>
-					<td><?= $datos['curso'] ?></td>
-					<td><?= $datos['materia'] ?></td>
-					<td><?= $datos['nombre'] ?></td>
-					<td><?= $datos['descripcion'] ?></td>
-					<td><?= $datos['fecha_creacion'] ?></td>
-					<td><a href="archivos_subidos/<?= $datos['nombre_archivo'] ?>" download><?= $datos['nombre_archivo'] ?></a></td>
-					<td>
-						<a class="link_edit" href="/mvc/tareas_enviar_alumno/exec/<?= "{$datos['idtarea']}" ?>">Enviar Tarea</a>
-					</td>
-				</tr>
+                    <td data-label="curso"><?= $datos['curso'] ?></td>
+                    <td data-label="materia"><?= $datos['materia'] ?></td>
+                    <td data-label="nombre"><?= $datos['nombre'] ?> </td>
+                     <td data-label="descripcion"><?= $datos['descripcion'] ?> </td>
+                      <td data-label="fecha_creacion"><?= $datos['fecha_creacion'] ?> </td>
+                       <td data-label="archivos_subidos"><a href="archivos_subidos/<?= $datos['nombre_archivo'] ?>" download><?= $datos['nombre_archivo'] ?></a> </td>
+                        <td data-label="Acciones">	<a class="link_edit" href="/mvc/tareas_enviar_alumno/exec/<?= "{$datos['idtarea']}" ?>">Enviar Tarea</a> </td>
+
+
+                   
+                </tr>
+
+
+
+
+
+
 				<?php
 			}
 		}

@@ -29,13 +29,12 @@ class examen_menu_temacontroller extends controller
 		if ($query->num_rows) {
 			while ($datos = $query->fetch_assoc()) {
 		?>
-			<tr>
-                <td><?php echo $datos['idtema']; ?></td>
 
-                <td><a class="#" href="/mvc/examen_menu_pruebas/exec/<?= $datos['idtema']?> " > <?php echo $datos['tema'] ?></a></td>
-				
-            </tr>
+		<tr>
+                    <td data-label="id tema"><?php echo $datos['idtema']; ?></td>
+                    <td data-label="tema"><a class="#" href="/mvc/examen_menu_pruebas/exec/<?= $datos['idtema']?> " > <?php echo $datos['tema'] ?></a></td>
 
+                    
 		<?php 
 			} 
 		}
