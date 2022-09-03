@@ -25,7 +25,8 @@ FUNCIONES:
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/71948453/183325650-d6371b94-f274-452f-8965-692f9480324e.png" alt="Sublime's custom image"/>
+  <img src="https://user-images.githubusercontent.com/71948453/188252780-d5059424-b2df-4805-b618-1d14386c47cb.png
+" alt="Sublime's custom image"/>
 </p>
 
 
