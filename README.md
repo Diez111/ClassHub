@@ -11,7 +11,7 @@ contraseña:123456
 Usuario de profesor: Profesor
 contraseña: 123456
 
-
+Completado: 70%
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/71948453/183326532-fe7953cf-7fc6-4396-b9f0-3f41995fb333.png" alt="Sublime's custom image"/>
