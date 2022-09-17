@@ -13,7 +13,7 @@ contraseña: 123456
 
 
 <p align="center">
-FUNCIONES: Completado en 80%
+FUNCIONES: Completado en 82%
 </p>
 
 
