@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 10-08-2022 a las 05:47:45
+-- Servidor: localhost
+-- Tiempo de generación: 17-09-2022 a las 21:16:02
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.28
+-- Versión de PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,66 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `classhub`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `chat_privado`
+--
+
+CREATE TABLE `chat_privado` (
+  `mensaje_id` int(11) NOT NULL,
+  `mensaje` varchar(500) NOT NULL,
+  `emisor_id` int(4) NOT NULL,
+  `receptor_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `chat_privado`
+--
+
+INSERT INTO `chat_privado` (`mensaje_id`, `mensaje`, `emisor_id`, `receptor_id`) VALUES
+(1, 'hola', 39, 18),
+(2, 'hola lol', 18, 39),
+(3, 'sas', 18, 39),
+(4, 'sus', 39, 18),
+(5, 'sas', 39, 18),
+(6, 'sas', 39, 18);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `chat_publico`
+--
+
+CREATE TABLE `chat_publico` (
+  `mensaje_id` int(11) NOT NULL,
+  `mensaje` varchar(500) NOT NULL,
+  `usuario_id` int(4) NOT NULL,
+  `curso_id` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `chat_publico`
+--
+
+INSERT INTO `chat_publico` (`mensaje_id`, `mensaje`, `usuario_id`, `curso_id`) VALUES
+(1, 'hola', 18, 1),
+(2, 'hola pibe', 38, 1),
+(3, 'adasd', 38, 1),
+(4, 'asasas', 38, 1),
+(5, 'asdasdasd', 38, 1),
+(6, 'giygysdgyasdgyasduy', 38, 1),
+(7, 'hjbdzhjxbzzxhjb', 18, 1),
+(8, 'sfsdhjbdfbhjsdfbhjsdfhjsdf', 18, 1),
+(9, 'hjbdzhjxbzzxhjbasdasdaas', 18, 1),
+(10, 'asdasd', 18, 1),
+(11, 'adsdsad', 18, 1),
+(12, 'asdasd', 18, 1),
+(13, 'fsddsf\r\n\r\n', 18, 1),
+(14, 'sdasd\r\nasdasdas\r\nasdasd', 18, 1),
+(15, 'sadasd', 18, 2),
+(16, 'asd', 18, 2);
 
 -- --------------------------------------------------------
 
@@ -299,25 +359,46 @@ CREATE TABLE `usuario` (
   `curso` int(11) DEFAULT NULL,
   `materia` int(11) DEFAULT NULL,
   `estatus` int(11) NOT NULL DEFAULT 1,
-  `intentos` int(1) NOT NULL DEFAULT 5
+  `intentos` int(1) NOT NULL DEFAULT 5,
+  `cursos` varchar(100) NOT NULL,
+  `temavis` varchar(100) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`idusuario`, `nombre`, `correo`, `usuario`, `clave`, `rol`, `curso`, `materia`, `estatus`, `intentos`) VALUES
-(18, 'diez', 'lautaro10.colegio@gmail.com', 'diez', 'e10adc3949ba59abbe56e057f20f883e', 1, 10, 1, 1, 5 ),
-(19, 'Lautaro', 'diezprocapoxd@gmail.com', 'Alumno', 'e10adc3949ba59abbe56e057f20f883e', 3, 11, 1, 1, 5),
-(20, 'Lautaro2', 'diezprocapoxd2@gmail.com', 'Profesor', 'e10adc3949ba59abbe56e057f20f883e', 2, 9, 1, 1, 5),
-(25, 'USUARIOPRUE', '33@gmail.com', 'ELBROMAS', 'e10adc3949ba59abbe56e057f20f883e', 1, 10, 1, 1, 5),
-(30, 'jorge', 'jorge@gmail.com', 'El Chorch', '81dc9bdb52d04dc20036dbd8313ed055', 1, 10, NULL, 1, 5),
-(31, 'johni', 'joni@gmail.com', 'el shoni', '81dc9bdb52d04dc20036dbd8313ed055', 2, 11, NULL, 1, 5),
-(32, 'juan', 'juan@gmail.com', 'el juancho', '81dc9bdb52d04dc20036dbd8313ed055', 3, 10, NULL, 1, 5);
+INSERT INTO `usuario` (`idusuario`, `nombre`, `correo`, `usuario`, `clave`, `rol`, `curso`, `materia`, `estatus`, `intentos`, `cursos`, `temavis`) VALUES
+(18, 'diez', 'lautaro10.colegio@gmail.com', 'diez', 'e10adc3949ba59abbe56e057f20f883e', 1, 10, 1, 1, 5, '', '2'),
+(19, 'Lautaro', 'diezprocapoxd@gmail.com', 'Alumno', 'e10adc3949ba59abbe56e057f20f883e', 3, 11, 1, 1, 5, '', '1'),
+(20, 'Lautaro2', 'diezprocapoxd2@gmail.com', 'Profesor', 'e10adc3949ba59abbe56e057f20f883e', 2, 9, 1, 1, 5, '', '1'),
+(25, 'USUARIOPRUE', '33@gmail.com', 'ELBROMAS', 'e10adc3949ba59abbe56e057f20f883e', 1, 10, 1, 1, 5, '', '1'),
+(30, 'jorge', 'jorge@gmail.com', 'El Chorch', '81dc9bdb52d04dc20036dbd8313ed055', 1, 10, NULL, 1, 5, '', '1'),
+(31, 'johni', 'joni@gmail.com', 'el shoni', '81dc9bdb52d04dc20036dbd8313ed055', 2, 11, NULL, 1, 5, '', '1'),
+(32, 'juan', 'juan@gmail.com', 'el juancho', '81dc9bdb52d04dc20036dbd8313ed055', 3, 10, NULL, 1, 5, '', '1'),
+(33, 'juan', 'pepe@gmail.com', 'lol', '81dc9bdb52d04dc20036dbd8313ed055', 2, 2, NULL, 1, 5, '-2-4-6-8-10', '1'),
+(34, 'amogus', 'sus@gmail.com', 'sus', '81dc9bdb52d04dc20036dbd8313ed055', 3, 4, NULL, 1, 5, '-4', '1'),
+(35, 'asjkdhasjkld', 'askdhaskdh@gmail.com', 'asdkashdkjas', 'a87ddd71d9eef30b4136635e8b4310dd', 3, NULL, NULL, 1, 5, '-4', '1'),
+(36, 'akasjlqwyoqweuioqweuio', 'qeuieywqeuioy@gmail.com', 'wqdasdaw', '84ed30001fcccfc70cc54b02b82bbe7d', 3, NULL, NULL, 1, 5, '-8', '1'),
+(37, 'admin2', 'hola@gmail.com', 'sas', '81dc9bdb52d04dc20036dbd8313ed055', 1, NULL, NULL, 1, 5, '-11', '1'),
+(38, 'hola', 'hola@gmail.com', 'hola', '81dc9bdb52d04dc20036dbd8313ed055', 3, NULL, NULL, 1, 5, '-1', '6'),
+(39, 'ojasdnoawdoadns', 'awowdhdoawi@gmail.com', 'test', '81dc9bdb52d04dc20036dbd8313ed055', 1, NULL, NULL, 1, 5, '-1-3-5-7-9-11', '1');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `chat_privado`
+--
+ALTER TABLE `chat_privado`
+  ADD PRIMARY KEY (`mensaje_id`);
+
+--
+-- Indices de la tabla `chat_publico`
+--
+ALTER TABLE `chat_publico`
+  ADD PRIMARY KEY (`mensaje_id`);
 
 --
 -- Indices de la tabla `curso`
@@ -394,6 +475,18 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `chat_privado`
+--
+ALTER TABLE `chat_privado`
+  MODIFY `mensaje_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `chat_publico`
+--
+ALTER TABLE `chat_publico`
+  MODIFY `mensaje_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
 -- AUTO_INCREMENT de la tabla `curso`
 --
 ALTER TABLE `curso`
@@ -457,7 +550,7 @@ ALTER TABLE `tarea`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
