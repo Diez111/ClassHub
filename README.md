@@ -30,6 +30,20 @@ XAMPP:https://www.apachefriends.org/es/download.html
    <img src="https://user-images.githubusercontent.com/71948453/193150066-720db5cb-802e-42a1-a94c-872f8dc23a38.png" alt="Sublime's custom image"/>
 </p>
 
+<br>
+
+Abrimos la terminal:
+<p align="center">
+   <img src="https://user-images.githubusercontent.com/71948453/193150496-317fc5d4-1bdf-4993-b61c-f5eaaf9a08c2.png" alt="Sublime's custom image"/>
+</p>
+
+
+<p align="center">
+Escribimos los siguientes comandos:
+  1.sudo chmod 777 ./xampp-linux-x64-7.4.29-1-installer.run
+  2.sudo ./xampp-linux-x64-7.4.29-1-installer.run
+</p>
+
 
 
 
