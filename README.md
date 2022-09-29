@@ -40,7 +40,13 @@ Abrimos la terminal:
 
 <p align="center">
 Escribimos los siguientes comandos:
+</p>
+
+<p align="center">
   1.sudo chmod 777 ./xampp-linux-x64-7.4.29-1-installer.run
+</p>
+
+<p align="center">
   2.sudo ./xampp-linux-x64-7.4.29-1-installer.run
 </p>
 
