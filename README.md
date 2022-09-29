@@ -51,6 +51,10 @@ Escribimos los siguientes comandos:
 </p>
 
 <p align="center">
+  3. Seguir los pasos de forma grafica
+</p>
+
+<p align="center">
    <img src="https://user-images.githubusercontent.com/71948453/193151369-d1454bd8-d314-429f-b1f3-97ccbcf1ba03.png" alt="Sublime's custom image"/>
 </p>
 
