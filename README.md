@@ -26,7 +26,7 @@ instalacion:
 
 XAMPP:https://www.apachefriends.org/es/download.html
 <p align="center">
-![image](https://user-images.githubusercontent.com/71948453/193150066-720db5cb-802e-42a1-a94c-872f8dc23a38.png)
+   <img src="https://user-images.githubusercontent.com/71948453/193150066-720db5cb-802e-42a1-a94c-872f8dc23a38.png" alt="Sublime's custom image"/>
 </p>
 
 
