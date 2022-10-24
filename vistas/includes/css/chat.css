@@ -1,0 +1,107 @@
+#chat{
+  background-color: rgb(0, 0, 0);
+  margin: 20px auto 0;
+  width: 310px;
+}
+#chat #header-chat{
+  background-color: #555;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+
+
+#caja-mensaje{
+background-color: #000000;
+margin: 0 auto;
+padding: 10px;
+width: 300px;
+}
+#caja-mensaje input{
+border: solid 1px #4193BF;
+outline: none;
+padding: 10px;
+width: 310px;
+}
+#caja-mensaje button{
+border: 0;
+background-color: #4193BF;
+color: rgb(0, 0, 0);
+font-size: 16px;
+padding: 8px;
+width: 50px;
+}
+
+
+#chat #mensajes{
+padding: 10px;
+height: 400px;
+width: 300px;
+overflow: hidden;
+overflow-y: scroll 
+}
+
+#chat #mensajes .mensaje-autor{
+margin-bottom: 50px;
+
+}
+#chat #mensajes .mensaje-autor img, #chat #mensajes .mensaje-amigo img{
+display: inline-block;
+vertical-align: top;
+}
+#chat #mensajes .mensaje-autor .contenido{
+background-color: rgb(0, 0, 0);
+border-radius: all;
+box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+display: inline-block;
+font-size: 13px;
+padding: 15px;
+vertical-align: top;
+width: 380px;
+}
+#chat #mensajes .mensaje-autor .fecha{
+color: rgb(0, 0, 0);
+font-style: italic;
+font-size: 13px;
+text-align: right;
+margin-right: 35px;
+margin-top: 10px;
+}
+#chat #mensajes .mensaje-autor .flecha-izquierda{
+display: inline-block;
+margin-right: -6px;
+margin-top: 10px;
+width: 0; 
+height: 0; 
+border-top: 0px solid transparent;
+border-bottom: 15px solid transparent;
+border-right: 15px solid rgb(0, 0, 0);
+}
+
+
+
+#chat #mensajes .mensaje-amigo{
+margin-bottom: 50px;
+}
+#chat #mensajes .mensaje-amigo .contenido{
+background-color: #3990BF;
+border-radius: 5px;
+color: white;
+display: inline-block;
+font-size: 13px;
+padding: 15px;
+vertical-align: top;
+width: 280px;
+}
+
+
+ .fecha{
+color: #777;
+font-style: italic;
+font-size: 13px;
+text-align: left;
+
+margin-top: 10px;
+}
