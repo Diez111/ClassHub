@@ -3,7 +3,7 @@
 Usuarios:
 
 Usuario admin:diez
-contraseña: 123456
+contraseña: 12345
 
 Usuario de alumno: alumno 
 contraseña:123456
