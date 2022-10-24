@@ -13,12 +13,12 @@ contraseña: 123456
 
 
 <p align="center">
-FUNCIONES: Completado en 82%
+FUNCIONES: Completado en 94%
 </p>
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/71948453/190872209-88233510-e7de-4369-a78c-2b370f6bba7e.png" alt="Sublime's custom image"/>
+  <img src="https://user-images.githubusercontent.com/71948453/197431576-97f58b7c-4792-4f85-89aa-b82caf7c0463.png" alt="Sublime's custom image"/>
 </p>
 
 
